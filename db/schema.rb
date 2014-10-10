@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141010085828) do
+ActiveRecord::Schema.define(version: 20141010120312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141010085828) do
     t.integer  "release_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_pull_request"
   end
 
   create_table "releases", force: true do |t|
