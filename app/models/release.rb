@@ -1,23 +1,25 @@
 class Release < ActiveRecord::Base
-  has_many :commits
+  has_many :commits, :inverse_of => :release
 
   def populate_commits
+    previous_sha = previous_commit.sha
+
     puts 'Initing repo'
     repo = Rugged::Repository.new('/Users/tgandrews/froont/froont')
-    puts 'Lookup remote'
-    # puts repo.remotes['origin'].inspect
-    # repo.remotes['origin'].fetch()
     puts 'Creating walker'
     i = 0
     repo.walk 'HEAD' do |c|
       if c.message.start_with? "Merge pull request"
-        puts "Message: #{c.message}"
-        puts "Author: #{c.author}"
-        i += 1
-        if i > 10
+        commit = Commit.new(description: c.message, author: c.author[:name])
+        self.commits << commit
+        if c.tree.oid == previous_sha
           return false
         end
       end
     end
+  end
+
+  def previous_commit
+    Release.order('id desc').first
   end
 end

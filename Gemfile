@@ -37,3 +37,4 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'rugged'
+gem 'pry', group: :development

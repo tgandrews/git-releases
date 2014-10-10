@@ -1,0 +1,19 @@
+<li>
+  <p>
+    <strong>SHA:</strong>
+    <%= @commit.sha %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @commit.description %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= @commit.author %>
+  </p>
+
+  <%= link_to 'Edit', edit_commit_path(@commit) %> |
+  <%= link_to 'Back', commits_path %>
+</li>
