@@ -2,9 +2,9 @@ class CreateCommits < ActiveRecord::Migration
   def change
     create_table :commits do |t|
       t.string :sha
+      t.string :description
       t.string :author
-      t.string :message
-      t.boolean :is_pull_request
+      t.belongs_to :release
 
       t.timestamps
     end

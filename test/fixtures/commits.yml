@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   sha: MyString
+  description: MyString
   author: MyString
-  message: MyString
-  is_pull_request: false
+  release_id: 
 
 two:
+  id: 1
   sha: MyString
+  description: MyString
   author: MyString
-  message: MyString
-  is_pull_request: false
+  release_id: 

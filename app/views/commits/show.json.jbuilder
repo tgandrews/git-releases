@@ -1,1 +1,1 @@
-json.extract! @commit, :id, :sha, :author, :message, :is_pull_request, :created_at, :updated_at
+json.extract! @commit, :id, :id, :sha, :description, :author, :release_id, :created_at, :updated_at

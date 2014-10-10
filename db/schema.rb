@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141010084153) do
+ActiveRecord::Schema.define(version: 20141010085828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "commits", force: true do |t|
     t.string   "sha"
+    t.string   "description"
     t.string   "author"
-    t.string   "message"
-    t.boolean  "is_pull_request"
+    t.integer  "release_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

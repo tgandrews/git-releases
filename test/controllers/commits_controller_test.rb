@@ -18,7 +18,7 @@ class CommitsControllerTest < ActionController::TestCase
 
   test "should create commit" do
     assert_difference('Commit.count') do
-      post :create, commit: { author: @commit.author, is_pull_request: @commit.is_pull_request, message: @commit.message, sha: @commit.sha }
+      post :create, commit: { author: @commit.author, description: @commit.description, id: @commit.id, release_id: @commit.release_id, sha: @commit.sha }
     end
 
     assert_redirected_to commit_path(assigns(:commit))
@@ -35,7 +35,7 @@ class CommitsControllerTest < ActionController::TestCase
   end
 
   test "should update commit" do
-    patch :update, id: @commit, commit: { author: @commit.author, is_pull_request: @commit.is_pull_request, message: @commit.message, sha: @commit.sha }
+    patch :update, id: @commit, commit: { author: @commit.author, description: @commit.description, id: @commit.id, release_id: @commit.release_id, sha: @commit.sha }
     assert_redirected_to commit_path(assigns(:commit))
   end
 
