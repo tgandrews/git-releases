@@ -82,4 +82,4 @@ production:
   <<: *default
   database: git-releases_production
   username: git-releases
-  password: <%= ENV['GIT-RELEASES_DATABASE_PASSWORD'] %>
+  password: <%= ENV['GIT_RELEASES_DATABASE_PASSWORD'] %>
