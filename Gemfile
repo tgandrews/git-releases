@@ -38,3 +38,4 @@ gem 'spring',        group: :development
 
 gem 'rugged'
 gem 'pry', group: :development
+gem 'therubyracer', group: :production
