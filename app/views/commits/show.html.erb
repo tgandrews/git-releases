@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sha:</strong>
+  <%= @commit.sha %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @commit.author %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @commit.message %>
+</p>
+
+<p>
+  <strong>Is pull request:</strong>
+  <%= @commit.is_pull_request %>
+</p>
+
+<%= link_to 'Edit', edit_commit_path(@commit) %> |
+<%= link_to 'Back', commits_path %>

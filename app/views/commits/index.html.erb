@@ -1,0 +1,31 @@
+<h1>Listing commits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sha</th>
+      <th>Author</th>
+      <th>Message</th>
+      <th>Is pull request</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @commits.each do |commit| %>
+      <tr>
+        <td><%= commit.sha %></td>
+        <td><%= commit.author %></td>
+        <td><%= commit.message %></td>
+        <td><%= commit.is_pull_request %></td>
+        <td><%= link_to 'Show', commit %></td>
+        <td><%= link_to 'Edit', edit_commit_path(commit) %></td>
+        <td><%= link_to 'Destroy', commit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Commit', new_commit_path %>
