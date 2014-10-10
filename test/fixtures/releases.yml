@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sha: MyString
+  release_date: 2014-10-10 11:33:00
+
+two:
+  sha: MyString
+  release_date: 2014-10-10 11:33:00
