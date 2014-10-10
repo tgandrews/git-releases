@@ -25,6 +25,7 @@ class ReleasesController < ApplicationController
   # POST /releases.json
   def create
     @release = Release.new(release_params)
+    @release.populate_commits
 
     respond_to do |format|
       if @release.save
